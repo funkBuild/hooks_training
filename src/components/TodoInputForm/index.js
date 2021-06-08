@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
+import useKeypress from '../../hooks/useKeypress'
 
 import './TodoInputForm.scss';
 
@@ -6,6 +7,17 @@ const TodoInputForm = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
+
+  const onEnterPressed = useCallback(() => {
+    console.log('Submitting the form!');
+    console.dir({
+      isComplete,
+      title,
+      notes
+    });
+  }, [isComplete, title, notes]);
+
+  useKeypress("Enter", onEnterPressed);
 
   return (
     <div className="TodoInputForm">

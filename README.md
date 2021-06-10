@@ -20,3 +20,8 @@ Example of using useState with a basic form to store state at a component level
 
 `example2_useeffect_usecallback`
 Example of using useEffect for making a custom hook for detecting keypresses and running a callback created from a useCallback hook.
+
+`example3_useref`
+Example of using useRef for holding a reference to an element and using the reference inside a callback function
+
+`example4_usecontext`

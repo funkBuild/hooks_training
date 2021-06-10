@@ -1,11 +1,11 @@
 .TodoInputForm {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   padding: 15px;
-  margin: 15px;
   border-radius: 10px;
   background-color: rgb(54, 44, 46);
   width: 400px;
+  height: 80px;
 
   .Column {
     display: flex;

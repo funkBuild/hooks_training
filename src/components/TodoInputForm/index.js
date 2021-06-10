@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import useKeypress from '../../hooks/useKeypress'
 
 import './TodoInputForm.scss';
@@ -7,8 +7,14 @@ const TodoInputForm = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
+  const textareaRef = useRef(null);
 
   const onEnterPressed = useCallback(() => {
+    if (document.activeElement === textareaRef.current) {
+      console.log('Skip submit whilst the text area is focussed');
+      return;
+    }
+
     console.log('Submitting the form!');
     console.dir({
       isComplete,
@@ -37,6 +43,7 @@ const TodoInputForm = () => {
           value={title}
           onChange={e => setTitle(e.currentTarget.value)} />
         <textarea
+          ref={textareaRef}
           placeholder="Notes"
           rows="4"
           value={notes}

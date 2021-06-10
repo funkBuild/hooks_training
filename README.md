@@ -17,3 +17,6 @@ yarn run start
 
 `example1_usestate`
 Example of using useState with a basic form to store state at a component level
+
+`example2_useeffect_usecallback`
+Example of using useEffect for making a custom hook for detecting keypresses and running a callback created from a useCallback hook.

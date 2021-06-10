@@ -25,3 +25,7 @@ Example of using useEffect for making a custom hook for detecting keypresses and
 Example of using useRef for holding a reference to an element and using the reference inside a callback function
 
 `example4_usecontext`
+Example of using useContext to implement navigation tabs and showing content conditionally
+
+`example4_usememo`
+Example of using useMemo to memoize a simple calculation

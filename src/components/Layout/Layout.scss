@@ -17,12 +17,13 @@
   justify-content: flex-start;
   padding: 25px;
 
-  > * {
+  > span {
     display:flex;
     align-items: center;
     padding: 5px;
     border-radius: 5px;
     font-weight: bold;
+    transition: background-color 0.25s ease;
 
     svg {
       height: 20px;
@@ -32,6 +33,10 @@
 
     &:hover {
       cursor: pointer;
+      background-color: rgb(114, 99, 120);
+    }
+
+    &.selected {
       background-color: rgb(65, 57, 68);
     }
   }

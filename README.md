@@ -27,5 +27,8 @@ Example of using useRef for holding a reference to an element and using the refe
 `example4_usecontext`
 Example of using useContext to implement navigation tabs and showing content conditionally
 
-`example4_usememo`
+`example5_usememo`
 Example of using useMemo to memoize a simple calculation
+
+`example6_usecontext_state`
+Example of using useContext to store the app state and save it in the browsers localstorage

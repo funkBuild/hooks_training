@@ -1,0 +1,20 @@
+.Todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 15px;
+  font-size: 14px;
+
+  .IsComplete {
+    flex: 0 0 30px;
+  }
+
+  .Title {
+    margin: 0 3px;
+  }
+
+  .Icons {
+    margin: 0 3px;
+  }
+}

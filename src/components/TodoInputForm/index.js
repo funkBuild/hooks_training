@@ -1,9 +1,12 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useContext } from 'react'
 import useKeypress from '../../hooks/useKeypress'
+import { StateContext } from '../../contexts/state'
 
 import './TodoInputForm.scss';
 
 const TodoInputForm = () => {
+  const { addNewTodo } = useContext(StateContext);
+
   const [isComplete, setIsComplete] = useState(false);
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
@@ -15,13 +18,16 @@ const TodoInputForm = () => {
       return;
     }
 
-    console.log('Submitting the form!');
-    console.dir({
+    addNewTodo({
       isComplete,
       title,
       notes
     });
-  }, [isComplete, title, notes]);
+
+    setIsComplete(false);
+    setTitle("");
+    setNotes("");
+  }, [isComplete, title, notes, addNewTodo]);
 
   useKeypress("Enter", onEnterPressed);
 
@@ -40,6 +46,7 @@ const TodoInputForm = () => {
           name="title"
           placeholder="New To-Do"
           type="text"
+          minLength="1"
           value={title}
           onChange={e => setTitle(e.currentTarget.value)} />
         <textarea

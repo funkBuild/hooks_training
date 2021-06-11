@@ -1,6 +1,8 @@
 import { Layout, Sidebar, Content } from './components/Layout'
 import { TabContainer, Tab } from './components/NavigationTabs'
 
+import { StateContextProvider } from './contexts/state'
+
 import { Menu } from './views/Menu'
 import { Inbox } from './views/Inbox'
 import { Today } from './views/Today'
@@ -14,43 +16,45 @@ import './App.css';
 
 function App() {
   return (
-    <Layout>
-      <TabContainer initialTab={"inbox"}>
-        <Sidebar>
-          <Menu />
-        </Sidebar>
+    <StateContextProvider>
+      <Layout>
+        <TabContainer initialTab={"inbox"}>
+          <Sidebar>
+            <Menu />
+          </Sidebar>
 
-        <Content>
-          <Tab name="inbox">
-            <Inbox />
-          </Tab>
+          <Content>
+            <Tab name="inbox">
+              <Inbox />
+            </Tab>
 
-          <Tab name="today">
-            <Today />
-          </Tab>
+            <Tab name="today">
+              <Today />
+            </Tab>
 
-          <Tab name="upcoming">
-            <Upcoming />
-          </Tab>
+            <Tab name="upcoming">
+              <Upcoming />
+            </Tab>
 
-          <Tab name="anytime">
-            <Anytime />
-          </Tab>
+            <Tab name="anytime">
+              <Anytime />
+            </Tab>
 
-          <Tab name="someday">
-            <Someday />
-          </Tab>
+            <Tab name="someday">
+              <Someday />
+            </Tab>
 
-          <Tab name="logbook">
-            <Logbook />
-          </Tab>
+            <Tab name="logbook">
+              <Logbook />
+            </Tab>
 
-          <Tab name="trash">
-            <Trash />
-          </Tab>
-        </Content>
-      </TabContainer>
-    </Layout>
+            <Tab name="trash">
+              <Trash />
+            </Tab>
+          </Content>
+        </TabContainer>
+      </Layout>
+    </StateContextProvider>
   );
 }
 

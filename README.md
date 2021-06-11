@@ -1,3 +1,9 @@
+# Further reading
+
+https://reactjs.org/docs/hooks-intro.html
+
+https://hackernoon.com/deconstructing-the-magic-behind-react-hooks-33ca987e5307
+
 # Sample TODO app using hooks and contexts
 
 This sample app uses `create-react-app` [https://github.com/facebook/create-react-app] to setup the React environment. 
